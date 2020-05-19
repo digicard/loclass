@@ -260,7 +260,9 @@ void doTagMAC(uint8_t *cc_nr_p, uint8_t *div_key_p, uint8_t mac[4])
 	MAC(div_key,bitstream_in, &out);
 	//The output MAC must also be reversed
 	reverse_arraybytes(dest, sizeof(dest));
-	memcpy(mac, dest, 8);
+	//memcpy(mac, dest, 8);
+	// should be 4?
+	memcpy(mac, dest, 4);
 	//printf("Calculated_MAC\t%02x%02x%02x%02x\n", dest[0],dest[1],dest[2],dest[3]);
 	free(cc_nr_zeroes);
 	return;
