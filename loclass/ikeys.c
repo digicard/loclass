@@ -734,7 +734,7 @@ int doTestsWithKnownInputs()
 	return errors;
 }
 
-int readKeyFile(uint8_t key[8])
+int readKeyFile(uint8_t key[8], int size)
 {
 
 	FILE *f;
@@ -742,7 +742,7 @@ int readKeyFile(uint8_t key[8])
 	f = fopen("iclass_key.bin", "rb");
 	if (f)
 	{
-		if(fread(key, sizeof(key), 1, f) == 1) return 0;
+		if(fread(key, size, 1, f) == 1) return 0;
 	}
 	return 1;
 
@@ -755,7 +755,7 @@ int doKeyTests(uint8_t debuglevel)
 
 	prnlog("[+] Checking if the master key is present (iclass_key.bin)...");
 	uint8_t key[8] = {0};
-	if(readKeyFile(key))
+	if(readKeyFile(key, sizeof(key)))
 	{
 		prnlog("[+] Master key not present, will not be able to do all testcases");
 	}else

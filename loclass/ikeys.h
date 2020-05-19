@@ -66,4 +66,6 @@ void diversifyKey(uint8_t csn[8], uint8_t key[8], uint8_t div_key[8]);
  * @param dest
  */
 
+int readKeyFile(uint8_t key[8], int size);
+
 #endif // IKEYS_H
