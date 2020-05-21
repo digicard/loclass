@@ -88,7 +88,11 @@ int loadFile(const char *fileName, void* data, size_t datalen)
 		prnlog("Failed to read from file '%s'", fileName);
 		return 1;
 	}
-	fread(data,datalen,1,filehandle);
+	if(fread(data,datalen,1,filehandle) <= 0) {
+		prnlog("Failed to read from file '%s'", fileName);
+		fclose(filehandle);
+		return 1;
+	}
 	fclose(filehandle);
 	return 0;
 }

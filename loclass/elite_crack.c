@@ -551,10 +551,9 @@ int bruteforceDump(uint8_t dump[], size_t dumpsize, uint16_t keytable[])
  */
 int bruteforceFile(const char *filename, uint16_t keytable[])
 {
-
 	FILE *f = fopen(filename, "rb");
 	if(!f) {
-		prnlog("Failed to read from file '%s'", filename);
+		prnlog("Failed to open file '%s'", filename);
 		return 1;
 	}
 
@@ -563,7 +562,11 @@ int bruteforceFile(const char *filename, uint16_t keytable[])
 	fseek(f, 0, SEEK_SET);
 
 	uint8_t *dump = malloc(fsize);
-	fread(dump, fsize, 1, f);
+	if(fread(dump, fsize, 1, f) <= 0) {
+		prnlog("Failed to read from file '%s'", filename);
+		fclose(f);
+		return 1;
+	}
 	fclose(f);
 
 	return bruteforceDump(dump,fsize,keytable);
