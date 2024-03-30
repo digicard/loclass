@@ -1,0 +1,52 @@
+{
+  "name": "loclass",
+  "version": "1.0.0",
+  "description": "Reconstructon of the cipher engine used in iClass, an RFID techology developed by HID Global",
+  "keywords": "iclass, hid, cipher, rfid",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/digicard/loclass.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Alberto Lopez",
+      "email": "alopez@digicard.net",
+      "url": "https://github.com/AlbertoLopSie"
+    },
+    {
+      "name": "Adam Laurie",
+      "email": "adam@algroup.co.uk",
+      "url": "https://github.com/AdamLaurie"
+    },
+    {
+      "name": "Martin Holst Swende",
+      "email": "holiman@github.com",
+      "url": "https://github.com/holiman",
+      "maintainer": true
+    }
+  ],
+  "license": "GPLV2",
+  "homepage": "https://github.com/digicard/loclass",
+  "dependencies": {
+  },
+  "frameworks": ["*", "arduino", "espidf"],
+  "platforms": ["*", "espressif32"],
+    "build": {
+    "flags": [
+      "-Wno-unused-variable", 
+      "-Wno-unused-but-set-variable",
+      "-Wno-unused-function",
+      "-Wno-format-extra-args",
+      "-Wno-format",
+      "-Wimplicit-fallthrough=0",
+      "-Wno-dangling-else",
+      "-Wno-stringop-truncation",
+      "-Wno-discarded-qualifiers"
+    ],
+    "srcDir": "./loclass",
+    "includeDir": "./loclass",
+    "srcFilter": ["+<*.c>", "-<main.c>"]
+  }  
+}
