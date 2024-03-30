@@ -5,6 +5,8 @@
 >- CPP compatibility compilation
 >- ESP32 compatibility issues
 >
+>
+>Import with `lib_deps = https://github.com/digicard/loclass.git` in `platformio.ini`
 
 This is a reconstructon of the cipher engine used in iClass, an RFID techology developed by HID Global.
  
