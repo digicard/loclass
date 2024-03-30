@@ -37,6 +37,15 @@
 
 #ifndef HASH1_BRUTE_H
 #define HASH1_BRUTE_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void brute_hash1();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // HASH1_BRUTE_H

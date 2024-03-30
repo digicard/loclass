@@ -38,6 +38,11 @@
 
 #ifndef CIPHERUTILS_H
 #define CIPHERUTILS_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -71,4 +76,9 @@ void reverse_arraycopy(uint8_t* arr, uint8_t* dest, size_t len);
 void printarr(char * name, uint8_t* arr, int len);
 void printvar(char * name, uint8_t* arr, int len);
 void printarr_human_readable(char * title, uint8_t* arr, int len);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif // CIPHERUTILS_H

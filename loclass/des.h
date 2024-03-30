@@ -29,6 +29,10 @@
 
 //#include "config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <string.h>
 
 #if defined(_MSC_VER) && !defined(EFIX64) && !defined(EFI32)
@@ -248,6 +252,10 @@ extern "C" {
  * \return         0 if successful, or 1 if the test failed
  */
 int des_self_test( int verbose );
+
+#ifdef __cplusplus
+}
+#endif
 
 #ifdef __cplusplus
 }

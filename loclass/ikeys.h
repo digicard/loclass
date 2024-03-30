@@ -38,6 +38,10 @@
 #ifndef IKEYS_H
 #define IKEYS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 /**
  * @brief
@@ -67,5 +71,9 @@ void diversifyKey(uint8_t csn[8], uint8_t key[8], uint8_t div_key[8]);
  */
 
 int readKeyFile(uint8_t key[8], int size);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // IKEYS_H

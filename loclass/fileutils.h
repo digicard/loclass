@@ -37,6 +37,11 @@
 
 #ifndef FILEUTILS_H
 #define FILEUTILS_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @brief Utility function to save data to a file. This method takes a preferred name, but if that
  * file already exists, it tries with another name until it finds something suitable.
@@ -67,4 +72,9 @@ int loadFile(const char *fileName, void* data, size_t datalen);
  * @param fmt
  */
 void prnlog(char *fmt, ...);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif // FILEUTILS_H

@@ -38,6 +38,11 @@
 
 #ifndef ELITE_CRACK_H
 #define ELITE_CRACK_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void permutekey(uint8_t key[8], uint8_t dest[8]);
 /**
  * Permutes  a key from iclass specific format to NIST format
@@ -143,5 +148,9 @@ int testElite();
 
 **/
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

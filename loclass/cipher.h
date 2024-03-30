@@ -38,6 +38,11 @@
 
 #ifndef CIPHER_H
 #define CIPHER_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include "cipherutils.h"
 
@@ -46,4 +51,9 @@ void doTagMAC(uint8_t *cc_nr_p, uint8_t *div_key_p, uint8_t mac[4]);
 void MAC(uint8_t* k, BitstreamIn input, BitstreamOut *out);
 int testMAC();
 int testOptMAC();
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif // CIPHER_H
