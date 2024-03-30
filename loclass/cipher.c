@@ -200,11 +200,11 @@ void output(uint8_t* k,State s, BitstreamIn* in,  BitstreamOut* out)
 }
 
 /**
-* Definition 6 (Initial state). Define the function init which takes as input a
+* Definition 6 (Initial state). Define the function kinit which takes as input a
 * key k ∈ (F 82 ) 8 and outputs the initial cipher state s =< l, r, t, b >
 **/
 
-State init(uint8_t* k)
+State kinit(uint8_t* k)
 {
 	State s = {
 	((k[0] ^ 0x4c) + 0xEC) & 0xFF,// l
@@ -218,7 +218,7 @@ void MAC(uint8_t* k, BitstreamIn input, BitstreamOut *out)
 {
 	uint8_t zeroes_32[] = {0,0,0,0};
 	BitstreamIn input_32_zeroes = {zeroes_32,sizeof(zeroes_32)*8,0};
-	State initState = suc(k,init(k),&input);
+	State initState = suc(k,kinit(k),&input);
 	output(k,initState,&input_32_zeroes,out);
 }
 
