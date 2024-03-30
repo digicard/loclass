@@ -1,6 +1,6 @@
 {
   "name": "loclass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reconstructon of the cipher engine used in iClass, an RFID techology developed by HID Global",
   "keywords": "iclass, hid, cipher, rfid",
   "repository":
@@ -13,7 +13,8 @@
     {
       "name": "Alberto Lopez",
       "email": "alopez@digicard.net",
-      "url": "https://github.com/AlbertoLopSie"
+      "url": "https://github.com/AlbertoLopSie",
+      "maintainer": true
     },
     {
       "name": "Adam Laurie",
@@ -23,8 +24,7 @@
     {
       "name": "Martin Holst Swende",
       "email": "holiman@github.com",
-      "url": "https://github.com/holiman",
-      "maintainer": true
+      "url": "https://github.com/holiman"
     }
   ],
   "license": "GPLV2",
